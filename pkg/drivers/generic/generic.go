@@ -256,8 +256,8 @@ func Open(ctx context.Context, driverName, dataSourceName string, paramCharacter
 		`, columns), paramCharacter, numbered),
 
 		DeleteSQL: q(`
-			DELETE FROM kine AS kv
-			WHERE kv.id = ?`, paramCharacter, numbered),
+			DELETE FROM kine
+			WHERE id = ?`, paramCharacter, numbered),
 
 		UpdateCompactSQL: q(`
 			UPDATE kine
