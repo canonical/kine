@@ -46,8 +46,9 @@ type opts struct {
 	dsn        string
 	driverName string // If not empty, use a pre-registered dqlite driver
 
-	compactInterval time.Duration
-	pollInterval    time.Duration
+	compactInterval   time.Duration
+	pollInterval      time.Duration
+	watchQueryTimeout time.Duration
 }
 
 func AddPeers(ctx context.Context, nodeStore client.NodeStore, additionalPeers ...client.NodeInfo) error {
@@ -164,6 +165,7 @@ func New(ctx context.Context, datasourceName string, tlsInfo tls.Config) (server
 
 	generic.CompactInterval = opts.compactInterval
 	generic.PollInterval = opts.pollInterval
+	generic.WatchQueryTimeout = opts.watchQueryTimeout
 	return backend, nil
 }
 
@@ -320,6 +322,12 @@ func parseOpts(dsn string) (opts, error) {
 			}
 			result.pollInterval = d
 			delete(values, k)
+		case "watch-query-timeout":
+			d, err := time.ParseDuration(vs[0])
+			if err != nil {
+				return opts{}, fmt.Errorf("failed to parse watch-query-timeout duration value %q: %w", vs[0], err)
+			}
+			result.watchQueryTimeout = d
 		}
 	}
 
