@@ -46,8 +46,9 @@ type opts struct {
 	dsn        string
 	driverName string // If not empty, use a pre-registered dqlite driver
 
-	compactInterval time.Duration
-	pollInterval    time.Duration
+	compactInterval   time.Duration
+	pollInterval      time.Duration
+	watchQueryTimeout time.Duration
 }
 
 func AddPeers(ctx context.Context, nodeStore client.NodeStore, additionalPeers ...client.NodeInfo) error {
