@@ -10,10 +10,10 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2.4.0
 
       - name: Install Go
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@bfdd3570ce990073878bf10f6b2d79082de49492 # v2
         with:
           go-version: "1.19"
 
@@ -39,10 +39,10 @@ jobs:
 
     steps:
       - name: Check out Code
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2.4.0
 
       - name: Install Go
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@bfdd3570ce990073878bf10f6b2d79082de49492 # v2
         with:
           go-version: "1.19"
 
@@ -58,10 +58,10 @@ jobs:
 
     steps:
       - name: Check out Code
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2.4.0
 
       - name: Install Go
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@bfdd3570ce990073878bf10f6b2d79082de49492 # v2
         with:
           go-version: "1.19"
 
@@ -83,10 +83,10 @@ jobs:
 
     steps:
       - name: Check out Code
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2.4.0
 
       - name: Install Go
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@bfdd3570ce990073878bf10f6b2d79082de49492 # v2
         with:
           go-version: "1.19"
 
@@ -102,10 +102,10 @@ jobs:
 
     steps:
       - name: Check out Code
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2.4.0
 
       - name: Install Go
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@bfdd3570ce990073878bf10f6b2d79082de49492 # v2
         with:
           go-version: "1.19"
 
